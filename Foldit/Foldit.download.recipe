@@ -10,8 +10,6 @@
 	<string>com.github.pacificridgeschool.download.Foldit</string>
 	<key>Input</key>
 	<dict>
-		<key>APP_FILENAME</key>
-		<string>Foldit</string>
 		<key>NAME</key>
 		<string>Foldit</string>
 	</dict>
@@ -25,7 +23,7 @@
 				<key>filename</key>
 				<string>%NAME%.dmg</string>
 				<key>url</key>
-				<string>https://fold.it/portal/files/app/Foldit-osx_x86.dmg</string>
+				<string>https://files.ipd.uw.edu/pub/foldit/Foldit-macos_x64.dmg</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLDownloader</string>
@@ -33,6 +31,28 @@
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/Foldit.app</string>
+				<key>requirement</key>
+				<string>identifier "edu.washington.foldit" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = AK3A49G4G2</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/Foldit.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleVersion</string>
+			</dict>
+			<key>Processor</key>
+			<string>Versioner</string>
 		</dict>
 	</array>
 </dict>

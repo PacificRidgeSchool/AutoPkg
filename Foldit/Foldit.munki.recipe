@@ -10,8 +10,6 @@
 	<string>com.github.pacificridgeschool.munki.Foldit</string>
 	<key>Input</key>
 	<dict>
-		<key>APP_FILENAME</key>
-		<string>Foldit</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
@@ -23,9 +21,9 @@
 				<string>testing</string>
 			</array>
 			<key>description</key>
-			<string>Penumbra: Overture is the first in a series of episodic survival horror games developed by Swedish developer Frictional Games. It was originally intended as the first episode of a trilogy.</string>
+			<string>Foldit is an experimental video game about protein folding, developed as a collaboration between the University of Washington's departments of Computer Science and Engineering and Biochemistry (many of the same people who created...</string>
 			<key>developer</key>
-			<string></string>
+			<string>Brian Koepnick</string>
 			<key>display_name</key>
 			<string>Foldit</string>
 			<key>name</key>
@@ -40,17 +38,6 @@
 	<string>com.github.pacificridgeschool.download.Foldit</string>
 	<key>Process</key>
 	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%pathname%/Foldit.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleVersion</string>
-			</dict>
-			<key>Processor</key>
-			<string>Versioner</string>
-		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
